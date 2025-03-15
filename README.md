@@ -1,3 +1,4 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 # Anomaly-Detection
 This project focuses on developing and testing models to detect anomalies and choose the model with the best results. 
 
