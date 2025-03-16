@@ -137,7 +137,7 @@ class OneClassSVMModel:
         # Plot the decision boundary at anomaly score = 0
         plt.figure(figsize=(6, 5))
         # Shade the outlier region (where decision function < 0)
-        plt.contourf(xx, yy, Z, levels=[Z.min(), 0], colors='orange', alpha=0.3)
+        plt.contourf(xx, yy, Z, levels=[Z.min(), 0], color = 'orange', alpha=0.3)
         # Plot the decision boundary line
         plt.contour(xx, yy, Z, levels=[0], linewidths=2, colors='red')
         
