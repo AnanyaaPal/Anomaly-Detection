@@ -53,8 +53,8 @@ python streamlit run app.py
    Follow the instructions. 
 
 2. **Training and Evaluation:**
-   - Run the models/ folder to generate the dataset and run the models.
-   - Run .ipynb evaluate the trained models using the test set and analyze the performance metrics.
+   - Navigate to the models folder to generate the dataset and run the models.
+   - Run the task.ipynb jupyter notebook to evaluate the trained models using the test set and analyze the performance metrics.
 
 4. **Deployment:**
    - Run the example using the streamlit command prompt (from installation) to evaluate metrics and visualise the detected anomalies. 
@@ -70,15 +70,9 @@ If you followed tutorials, include links to those here as well.
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+The MIT license applies to this repository.
 
 ---
-
-## Badges
-![Static Badge](https://img.shields.io/badge/MIT%20License)
-
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
 ## Features
 
