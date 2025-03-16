@@ -1,9 +1,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://192.168.0.102:8501)
+![Documentation](https://github.com/AnanyaaPal/Anomaly-Detection.git/actions/workflows/docs.yml/badge.svg)
+<p align="center">
+  <img src="assets/images/IAV_logo.png" alt="IAV Logo" width="200">
+</p>
 
-    ```md
-    ![IAV Logo](assets/images/IAV_logo.png)
-    ```
 # Anomaly-Detection
 This project focuses on developing and testing models to detect anomalies and choose the model with the best results. 
 
@@ -80,7 +81,7 @@ If your project has a lot of features, list them here.
 
 ## How to Contribute
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+Your contributions are much welcome to advance anomaly detection techniques on the given data. You're welcome to fork the repository as you see fit.
 
 ## Tests
 
