@@ -1,13 +1,16 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://192.168.0.102:8501)
+
+    ```md
+    ![IAV Logo](assets/images/IAV_logo.png)
+    ```
 # Anomaly-Detection
 This project focuses on developing and testing models to detect anomalies and choose the model with the best results. 
 
 ## Description
-The motivation to build this project was simply to challenge my analytical side to come up with a solution to solve the anomaly detection task, where we have unlabelled/ partially labelled data, and the system has a problem that makes the data shfift and flip. 
-It solves the problem of detecting outliers in the data with a visual support aid to visualise the predicted anomalies.
-The project allowed me to delve deeper into the field of anomaly detection using pre-defined algorithms from the sk-learn library, and utilise my core knowledge about machine learning concepts to solve the task. 
-
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+The motivation to build this project was simply to challenge my analytical skills to come up with a solution to solve the anomaly detection task, where we have unlabelled/ partially labelled data, and the system has a problem that makes the data shift and flip. 
+It solves the problem of detecting outliers in the data with a visual support aid. Three unsupervised learning algorithms from the sk-learn library have been utilised - One-Class SVM, Local Outlier Factor and Isolation Fores - each fitting the training dataset with a unique assumption. 
+The project allowed me to delve deeper into the field of anomaly detection using pre-defined algorithms and utilise my core knowledge about statistical and machine learning concepts to build the aforementioned models. 
 
 ## Table of Contents
 
@@ -19,18 +22,43 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [License](#license)
 
 ## Installation
+Open a terminal and run the following:
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Clone the repository:
+```bash
+git clone https://github.com/AnanyaaPal/Anomaly-Detection.git
+cd Anomaly-Detection
+```
+Install the dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+Install streamlit to run model deployment:
+```bash
+pip install streamlit
+streamlit hello
+```
+If this opens the _Streamlit Hello_ app in your browser, you're all set! If not, head over to [the documentation](https://docs.streamlit.io/get-started) for specific installs.
+
+Run the example:
+```bash
+cd Anomaly-Detection/app
+python streamlit run app.py
+```
+<img src="https://user-images.githubusercontent.com/7164864/217936487-1017784e-68ec-4e0d-a7f6-6b97525ddf88.gif" alt="Streamlit Hello" width=500 href="none"></img>
 
 ## Usage
+1. **Installation:**
+   Follow the instructions. 
 
-Provide instructions and examples for use. Include screenshots as needed.
+2. **Training and Evaluation:**
+   - Run the models/ folder to generate the dataset and run the models.
+   - Run .ipynb evaluate the trained models using the test set and analyze the performance metrics.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+4. **Deployment:**
+   - Run the example using the streamlit command prompt (from installation) to evaluate metrics and visualise the detected anomalies. 
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
 
 ## Credits
 
