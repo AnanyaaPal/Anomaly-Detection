@@ -2,7 +2,7 @@
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://192.168.0.102:8501)
 ![Documentation](https://github.com/AnanyaaPal/Anomaly-Detection.git/actions/workflows/docs.yml/badge.svg)
 <p align="center">
-  <img src="assets/images/IAV_logo.png" alt="IAV Logo" width="200">
+  <img src="assets/IAV_logo.png" alt="IAV Logo" width="200">
 </p>
 
 # Anomaly-Detection
