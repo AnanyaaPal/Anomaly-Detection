@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.ensemble import IsolationForest
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
-
+import matplotlib.pyplot as plt
 class IsolationForestModel:
     """
     A simple anomaly detection model using IsolationForest.
@@ -133,3 +133,66 @@ class IsolationForestModel:
             random_state=self.random_state
         )
         return self
+    
+    def plot_decision_boundary(self, X_train, X_test=None, X_outliers=None):
+        """
+        Plot the decision boundary learned by the Isolation Forest model,
+        along with data points.
+        
+        Parameters:
+            X_train: Normal training data (2D).
+            X_test: Optional test data (2D).
+            X_outliers: Optional set of data points predicted as anomalies (2D).
+            
+        This method is for 2D data only. It plots:
+        - Training data (blue)
+        - Test data (orange)
+        - Anomalies (green)
+        and shows the decision function contour from the IsolationForest model.
+        """
+        import numpy as np
+        import matplotlib.pyplot as plt
+        if X_train.shape[1] != 2:
+            raise ValueError("Visualization is supported only for 2D data.")
+        
+        # Combine all points to determine the plot range
+        X_all = X_train
+        if X_test is not None:
+            X_all = np.vstack([X_all, X_test])
+        if X_outliers is not None:
+            X_all = np.vstack([X_all, X_outliers])
+        x_min, x_max = X_all[:, 0].min() - 1, X_all[:, 0].max() + 1
+        y_min, y_max = X_all[:, 1].min() - 1, X_all[:, 1].max() + 1
+        
+        # Create a grid to evaluate the decision function.
+        xx, yy = np.meshgrid(np.linspace(x_min, x_max, 300),
+                            np.linspace(y_min, y_max, 300))
+        # Compute the decision function: lower values indicate more abnormal.
+        Z = self.model.decision_function(np.c_[xx.ravel(), yy.ravel()])
+        Z = Z.reshape(xx.shape)
+        
+        plt.figure(figsize=(6, 5))
+        # Shade the outlier region (where decision function < 0)
+        plt.contourf(xx, yy, Z, levels=[Z.min(), 0], colors='orange', alpha=0.3)
+        # Plot the decision boundary (where decision function equals 0)
+        plt.contour(xx, yy, Z, levels=[0], linewidths=2, colors='red')
+        
+        # Plot training data
+        plt.scatter(X_train[:, 0], X_train[:, 1],
+                    color='blue', alpha=0.7, label='Training data (ok)')
+        # Plot test data if available
+        if X_test is not None:
+            plt.scatter(X_test[:, 0], X_test[:, 1],
+                        color='orange', alpha=0.7, label='Test data (ok)')
+        # Plot anomalies if provided
+        if X_outliers is not None:
+            plt.scatter(X_outliers[:, 0], X_outliers[:, 1],
+                        color='green', alpha=0.7, label='Anomalies')
+        
+        plt.xlabel("x")
+        plt.ylabel("y")
+        plt.legend(loc='upper left')
+        plt.title("Isolation Forest Decision Boundary")
+        plt.show()
+
+

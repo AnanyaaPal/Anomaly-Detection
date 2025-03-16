@@ -103,35 +103,48 @@ class LocalOutlierFactorModel:
             "f1_score": f1
         }
 
-@staticmethod
-
-def plot_lof_predictions(X, y_pred, title="What detection looks like"):
+    def plot_lof_predictions(self, X_train, X_test=None, X_outliers=None, title="LocalOutlierFactor Results"):
         """
-        Plot data points colored by LOF predictions.
+        Plot LOF results for 2D data. This function will scatter-plot:
+        - X_train as 'Training data (ok)'
+        - X_test as 'Test data (ok)'
+        - X_outliers as 'Not ok data'
         
         Parameters
         ----------
-        X : array-like, shape (n_samples, 2)
-            Input data (2D for plotting).
-        y_pred : array-like, shape (n_samples,)
-            LOF predictions: +1 for inlier, -1 for outlier.
+        X_train : array-like of shape (n_samples, 2)
+            Normal training data used to fit the LOF model.
+        X_test : array-like of shape (n_samples, 2), optional
+            Test data (also normal, if you have a separate normal set).
+        X_outliers : array-like of shape (n_samples, 2), optional
+            Known or labeled outliers (anomalies) to plot separately.
         title : str
             Title of the plot.
         """
-        if X.shape[1] != 2:
-            raise ValueError("plot_lof_predictions only supports 2D data.")
+        import matplotlib.pyplot as plt
         
-        # Separate inliers vs. outliers
-        inlier_mask = (y_pred == 1)
-        outlier_mask = ~inlier_mask  # equivalent to (y_pred == -1)
-
-        plt.figure(figsize=(6,5))
-        plt.scatter(X[inlier_mask, 0], X[inlier_mask, 1],
-                    color='blue', alpha=0.7, label='Ok data')
-        plt.scatter(X[outlier_mask, 0], X[outlier_mask, 1],
-                    color='orange', alpha=0.7, label='Not ok data')
+        # Check if data is 2D
+        if X_train.shape[1] != 2:
+            raise ValueError("Visualization is only supported for 2D data.")
+        
+        plt.figure(figsize=(6, 5))
+        
+        # Plot training data
+        plt.scatter(X_train[:, 0], X_train[:, 1],
+                    color='blue', alpha=0.7, label='Training data (ok)')
+        
+        # Plot normal test data
+        if X_test is not None:
+            plt.scatter(X_test[:, 0], X_test[:, 1],
+                        color='orange', alpha=0.7, label='Test data (ok)')
+        
+        # Plot outliers/anomalies
+        if X_outliers is not None:
+            plt.scatter(X_outliers[:, 0], X_outliers[:, 1],
+                        color='green', alpha=0.7, label='Not ok data')
+        
         plt.title(title)
         plt.xlabel("x")
         plt.ylabel("y")
-        plt.legend()
+        plt.legend(loc='upper left')
         plt.show()
