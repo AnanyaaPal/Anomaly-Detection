@@ -29,7 +29,7 @@ class LocalOutlierFactorModel:
         )
         self.is_fitted = False
     
-    def fit(self, X):
+    def fit(self, X, y=None):
         """
         Fit the LOF model on training data.
         
@@ -131,20 +131,41 @@ class LocalOutlierFactorModel:
         
         # Plot training data
         plt.scatter(X_train[:, 0], X_train[:, 1],
-                    color='blue', alpha=0.7, label='Training data (ok)')
+                    color='blue', alpha=0.7)
         
         # Plot normal test data
         if X_test is not None:
             plt.scatter(X_test[:, 0], X_test[:, 1],
-                        color='orange', alpha=0.7, label='Test data (ok)')
+                        color='blue', alpha=0.7, label='Train + Test Ok data')
         
         # Plot outliers/anomalies
         if X_outliers is not None:
             plt.scatter(X_outliers[:, 0], X_outliers[:, 1],
-                        color='green', alpha=0.7, label='Not ok data')
+                        color='orange', alpha=0.7, label='Not ok data')
         
         plt.title(title)
         plt.xlabel("x")
         plt.ylabel("y")
         plt.legend(loc='upper left')
         plt.show()
+    
+    def get_params(self, deep=True):
+        """
+        Return the parameters as a dict, so that the estimator can be cloned.
+        """
+        return {"n_neighbors": self.n_neighbors,
+                "contamination": self.contamination,
+                "novelty": self.novelty}
+
+    def set_params(self, **params):
+        """
+        Set parameters from a dict. Reinitialize the underlying LOF model accordingly.
+        """
+        for key, value in params.items():
+            setattr(self, key, value)
+        self.model = LocalOutlierFactor(
+            n_neighbors=self.n_neighbors,
+            contamination=self.contamination,
+            novelty=self.novelty
+        )
+        return self
