@@ -111,7 +111,7 @@ class IsolationForestModel:
             "f1_score": f1
         }
 
-    # Optional: Provide get_params and set_params to allow GridSearchCV or RandomizedSearchCV
+    # Provide get_params and set_params to allow GridSearchCV or RandomizedSearchCV
     def get_params(self, deep=True):
         return {
             "n_estimators": self.n_estimators,
@@ -173,21 +173,21 @@ class IsolationForestModel:
         
         plt.figure(figsize=(6, 5))
         # Shade the outlier region (where decision function < 0)
-        plt.contourf(xx, yy, Z, levels=[Z.min(), 0], colors='orange', alpha=0.3)
+        plt.contourf(xx, yy, Z, levels=[Z.min(), 0], colors='white', alpha=0.3)
         # Plot the decision boundary (where decision function equals 0)
         plt.contour(xx, yy, Z, levels=[0], linewidths=2, colors='red')
         
         # Plot training data
         plt.scatter(X_train[:, 0], X_train[:, 1],
-                    color='blue', alpha=0.7, label='Training data (ok)')
+                    color='blue', alpha=0.7)
         # Plot test data if available
         if X_test is not None:
             plt.scatter(X_test[:, 0], X_test[:, 1],
-                        color='orange', alpha=0.7, label='Test data (ok)')
+                        color='blue', alpha=0.7, label='Train + Test Ok data')
         # Plot anomalies if provided
         if X_outliers is not None:
             plt.scatter(X_outliers[:, 0], X_outliers[:, 1],
-                        color='green', alpha=0.7, label='Anomalies')
+                        color='orange', alpha=0.7, label='Anomalies/Not ok data')
         
         plt.xlabel("x")
         plt.ylabel("y")
