@@ -137,16 +137,16 @@ class OneClassSVMModel:
         # Plot the decision boundary at anomaly score = 0
         plt.figure(figsize=(6, 5))
         # Shade the outlier region (where decision function < 0)
-        plt.contourf(xx, yy, Z, levels=[Z.min(), 0], color = 'orange', alpha=0.3)
+        plt.contourf(xx, yy, Z, levels=[Z.min(), 0], colors = 'white', alpha=0.3)
         # Plot the decision boundary line
         plt.contour(xx, yy, Z, levels=[0], linewidths=2, colors='red')
         
         # Plot training, test, and outlier points
-        plt.scatter(X_train[:, 0], X_train[:, 1], label='Training data (ok)', alpha = 0.7)
+        plt.scatter(X_train[:, 0], X_train[:, 1], color = 'blue', alpha = 0.7)
         if X_test is not None:
-            plt.scatter(X_test[:, 0], X_test[:, 1], label='Test data (ok)', alpha = 0.7)
+            plt.scatter(X_test[:, 0], X_test[:, 1], color = 'blue', label='Train + Test Ok data', alpha = 0.7)
         if X_outliers is not None:
-            plt.scatter(X_outliers[:, 0], X_outliers[:, 1],  label='Anomalies')
+            plt.scatter(X_outliers[:, 0], X_outliers[:, 1], color = 'orange', label='Anomalies/ Not ok data')
         plt.legend(loc='upper left')
         plt.title("One-Class SVM Decision Boundary")
         plt.xlabel("x")
