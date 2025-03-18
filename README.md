@@ -20,12 +20,13 @@ This project enabled me to deepen my understanding of anomaly detection methodol
 
 ## Table of Contents
 
-- [Installation](#installation)
 - [Usage](#usage)
 - [Analytical Strategy](#analyticalstrategy)
 - [Results](#results)
 - [Credits](#credits)
 - [License](#license)
+- [Features](#features)
+- [Contribution](#howtocontribute)
 - [Tests](#tests)
 
 ---
