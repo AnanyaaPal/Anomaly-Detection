@@ -1,6 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](http://192.168.0.102:8501)
-![Tests](https://github.com/AnanyaaPal/Anomaly-Detection/tree/main/.github/workflows/python-tests.yml/badge.svg)
+(![Tests](https://github.com/AnanyaaPal/Anomaly-Detection/actions/workflows/python-tests.yml/badge.svg)
+)
 <p align="center">
   <img src="assets/IAV_logo.png" alt="IAV Logo" width="200">
 </p>
