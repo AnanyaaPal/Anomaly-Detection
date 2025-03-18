@@ -151,7 +151,7 @@ class OneClassSVMModel:
         plt.title("One-Class SVM Decision Boundary")
         plt.xlabel("x")
         plt.ylabel("y")
-        plt.show()
+        plt.show() 
 
 # Create a wrapper class that extends your custom model and adds get_params/set_params
 class OneClassSVMWrapper(OneClassSVMModel):
