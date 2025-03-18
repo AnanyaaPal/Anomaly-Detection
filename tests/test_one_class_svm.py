@@ -3,7 +3,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import pytest
 import numpy as np
-from models.one_class_svm import OneClassSVMModel
+from models.one_class_svm import OneClassSVMModel 
 
 def test_oneclass_shapes():
     # Mock a small set of normal data
