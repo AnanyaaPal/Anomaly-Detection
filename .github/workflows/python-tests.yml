@@ -26,7 +26,7 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m pytest --maxfail=1 --disable-warnings
+          python -m pytest --maxfail=1 --disable-warnings 
 
 
 
