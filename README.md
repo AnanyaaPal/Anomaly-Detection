@@ -6,84 +6,140 @@
   <img src="assets/IAV_logo.png" alt="IAV Logo" width="200">
 </p>
 
-# Anomaly-Detection
-This project focuses on developing and testing models to detect anomalies and choose the model with the best results. 
+# Anomaly Detection
+This project involves developing, evaluating, and deploying various anomaly detection algorithms—including One-Class SVM, Isolation Forest, and Local Outlier Factor—to accurately identify anomalous patterns in data. The models are rigorously compared based on performance metrics to select the most effective approach for practical anomaly detection tasks.
+
+---
 
 ## Description
-The motivation to build this project was simply to challenge my analytical skills to come up with a solution to solve the anomaly detection task, where we have unlabelled/ partially labelled data, and the system has a problem that makes the data shift and flip. 
-It solves the problem of detecting outliers in the data with a visual support aid. Three unsupervised learning algorithms from the sk-learn library have been utilised - One-Class SVM, Local Outlier Factor and Isolation Fores - each fitting the training dataset with a unique assumption. 
-The project allowed me to delve deeper into the field of anomaly detection using pre-defined algorithms and utilise my core knowledge about statistical and machine learning concepts to build the aforementioned models. 
+The motivation behind this project was to challenge my analytical skills by addressing a realistic anomaly detection task, particularly involving unlabeled or partially labeled datasets where anomalies cause data to shift and flip. To tackle this, three powerful unsupervised machine learning algorithms from scikit-learn—One-Class SVM, Local Outlier Factor, and Isolation Forest—were implemented and systematically compared. Each model makes distinct assumptions about the underlying data distribution, providing valuable visual insights to support anomaly detection.
+
+This project enabled me to deepen my understanding of anomaly detection methodologies, leverage statistical and machine learning knowledge, and effectively evaluate and interpret model performance through comprehensive visualizations and metrics.
+
+---
 
 ## Table of Contents
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
 - [Installation](#installation)
 - [Usage](#usage)
+- [Analytical Strategy](#analyticalstrategy)
+- [Results](#results)
 - [Credits](#credits)
 - [License](#license)
+- [Tests](#tests)
 
-## Installation
-Open a terminal and run the following:
+---
 
-Clone the repository:
+## Usage
+Follow these steps to start analyzing anomalies in your datasets:
+
+1. **Setup & Installation:**
+- Clone the repository and navigate to the root directory:
 ```bash
 git clone https://github.com/AnanyaaPal/Anomaly-Detection.git
 cd Anomaly-Detection
 ```
-Install the dependencies:
+- Install dependencies from the provided requirements file:
 ```bash
 pip install -r requirements.txt
 ```
+2. **Data Preparation & Model Analysis:**
+- Open and run task.ipynb Jupyter Notebook to:
+-- Train and tune anomaly detection models (One-Class SVM, Local Outlier Factor, Isolation Forest).
+-- Evaluate models using accuracy, precision, recall, and F1-score metrics.
+-- Visualize decision boundaries and analyze model performances.
 
-Install streamlit to run model deployment:
+3. **Deployment & Interactive Visualization:**
+- Install streamlit:
 ```bash
 pip install streamlit
 streamlit hello
 ```
 If this opens the _Streamlit Hello_ app in your browser, you're all set! If not, head over to [the documentation](https://docs.streamlit.io/get-started) for specific installs.
 
-Run the example:
+- Navigate to the path of the folder and launch the interactive app:
 ```bash
 cd Anomaly-Detection/app
 python streamlit run app.py
 ```
-<img src="https://user-images.githubusercontent.com/7164864/217936487-1017784e-68ec-4e0d-a7f6-6b97525ddf88.gif" alt="Streamlit Hello" width=500 href="none"></img>
+-The Streamlit UI provides:
+-- Automatic hyperparameter tuning for optimal model configuration.
+-- Interactive sidebar controls to manually adjust hyperparameters and observe changes.
+-- Clear visualizations of decision boundaries and anomaly detection results.
 
-## Usage
-1. **Installation:**
-   Follow the instructions. 
+---
 
-2. **Training and Evaluation:**
-   - Navigate to the models folder to generate the dataset and run the models.
-   - Run the task.ipynb jupyter notebook to evaluate the trained models using the test set and analyze the performance metrics.
+## Analytical Strategy
+This project explores three anomaly detection models—One-Class SVM, Isolation Forest, and Local Outlier Factor (LOF)—by performing hyperparameter tuning using GridSearchCV to identify optimal configurations. Each model is trained and evaluated on standardized training, validation, and test datasets, with model performance compared through accuracy, precision, recall, and F1-score. Decision boundaries and Precision-Recall curves are visualized to illustrate model effectiveness and facilitate informed model selection for anomaly detection.
 
-4. **Deployment:**
-   - Run the example using the streamlit command prompt (from installation) to evaluate metrics and visualise the detected anomalies. 
+---
 
+## Results
+### Model Performance Comparison
+
+| Model                 | Accuracy | Precision | Recall | F1-Score |
+|-----------------------|----------|-----------|--------|----------|
+| **One-Class SVM**     | 85.5%    | 50.3%     | 100.0% | 66.9%    |
+| **Local Outlier Factor** | 53.8%    | 76.8%     | 5.9%   | 11.0%    |
+| **Isolation Forest**  | 97.8%    | 89.0%     | 100.0% | 94.2%    |
+
+### Best Performing Model: **Isolation Forest**
+
+### Precision-Recall Curve (Isolation Forest)
+![Isolation Forest Precision-Recall Curve](assets/Isolation_Forest_Precision-Recall%20Curve.png)
+
+### Final Thoughts
+- **Isolation Forest** clearly emerges as the most effective model for anomaly detection in this dataset, showcasing superior accuracy (97.8%) and an optimal balance between precision (89.0%) and recall (100%).
+- **One-Class SVM** remains valuable in scenarios where recall is prioritized over precision, such as fraud detection.
+- **Local Outlier Factor (LOF)** performs poorly on this dataset, indicating its limitations in generalizing well to the provided data structure.
+
+---
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Streamlit for building the interactive web application.
+<img src="https://user-images.githubusercontent.com/7164864/217936487-1017784e-68ec-4e0d-a7f6-6b97525ddf88.gif" alt="Streamlit Hello" width=500 href="none"></img>
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+---
 
 ## License
 
-The MIT license applies to this repository.
+The MIT License applies to this repository. See [LICENSE](LICENSE) for more details.
 
 ---
 
 ## Features
 
-If your project has a lot of features, list them here.
+- **Interactive Streamlit Application:** Intuitive user interface for anomaly detection.
+- **Multiple Models:** Compare results of One-Class SVM, Isolation Forest, and Local Outlier Factor.
+- **Automated Hyperparameter Tuning:** GridSearchCV integrated for optimal model parameters.
+- **Data Visualization:** Clearly visualize decision boundaries and precision-recall curves.
+- **Detailed Model Evaluation:** Comprehensive performance metrics (accuracy, precision, recall, F1-score) and confusion matrices.
+- **Scalable & Reproducible:** Structured code allowing easy replication or extension for other datasets.
+
+---
 
 ## How to Contribute
 
-Your contributions are much welcome to advance anomaly detection techniques on the given data. You're welcome to fork the repository as you see fit.
+Contributions are warmly welcomed to further improve and expand anomaly detection techniques demonstrated in this project. To contribute:
+
+- Fork the repository and create your branch (`git checkout -b feature/YourFeature`).
+- Submit your changes through a clear and detailed pull request explaining the improvements.
+- Open an issue if you encounter bugs, have feature requests, or general questions.
+
+---
 
 ## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+Automated tests run via GitHub Actions upon each push or pull request to the `main` branch.  
+To execute tests locally:
+
+1. Ensure dependencies are installed:
+```bash
+pip install -r requirements.txt
+```
+2. Run tests using:
+```
+python -m pytest --maxfail=1 --disable-warnings
+```
+The testing workflow configuration is defined in [`.github/workflows/python-tests.yml`](.github/workflows/python-tests.yml).
