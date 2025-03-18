@@ -46,9 +46,9 @@ pip install -r requirements.txt
 ```
 2. **Data Preparation & Model Analysis:**
 - Open and run task.ipynb Jupyter Notebook to:
--- Train and tune anomaly detection models (One-Class SVM, Local Outlier Factor, Isolation Forest).
--- Evaluate models using accuracy, precision, recall, and F1-score metrics.
--- Visualize decision boundaries and analyze model performances.
+  1. Train and tune anomaly detection models (One-Class SVM, Local Outlier Factor, Isolation Forest).
+  2. Evaluate models using accuracy, precision, recall, and F1-score metrics.
+  3. Visualize decision boundaries and analyze model performances.
 
 3. **Deployment & Interactive Visualization:**
 - Install streamlit:
@@ -64,9 +64,9 @@ cd Anomaly-Detection/app
 python streamlit run app.py
 ```
 -The Streamlit UI provides:
--- Automatic hyperparameter tuning for optimal model configuration.
--- Interactive sidebar controls to manually adjust hyperparameters and observe changes.
--- Clear visualizations of decision boundaries and anomaly detection results.
+  1. Automatic hyperparameter tuning for optimal model configuration.
+  2. Interactive sidebar controls to manually adjust hyperparameters and observe changes.
+  3. Clear visualizations of decision boundaries and anomaly detection results.
 
 ---
 
