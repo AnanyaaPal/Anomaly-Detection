@@ -96,7 +96,7 @@ Best Performing Model: **Isolation Forest**
 ![Isolation Forest Precision-Recall Curve](assets/Isolation_Forest_Precision-Recall%20Curve.png)
 
 ### Final Thoughts
-- **Isolation Forest** clearly emerges as the most effective model for anomaly detection in this dataset, showcasing superior accuracy (97.8%) and an optimal balance between precision (89.0%) and recall (100%).
+- **Isolation Forest** clearly emerges as the most effective model for anomaly detection in this dataset, showcasing superior accuracy (97.9%) and an optimal balance between precision (93.1%) and recall (100%).
 - **One-Class SVM** remains valuable in scenarios where recall is prioritized over precision, such as fraud detection.
 - **Local Outlier Factor (LOF)** performs poorly on this dataset, indicating its limitations in generalizing well to the provided data structure.
 
