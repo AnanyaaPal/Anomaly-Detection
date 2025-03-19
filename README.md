@@ -12,9 +12,15 @@ This project involves developing, evaluating, and deploying various anomaly dete
 ---
 
 ## Description
-The motivation behind this project was to challenge my analytical skills by addressing a realistic anomaly detection task, particularly involving unlabeled or partially labeled datasets where anomalies cause data to shift and flip. To tackle this, three powerful unsupervised machine learning algorithms from scikit-learn—One-Class SVM, Local Outlier Factor, and Isolation Forest—were implemented and systematically compared. Each model makes distinct assumptions about the underlying data distribution, providing valuable visual insights to support anomaly detection.
+The motivation behind this project was to enhance my analytical skills by addressing a realistic anomaly detection task, specifically involving unlabeled or partially labeled datasets in which anomalies result in data shifting and flipping. To tackle this, I implemented and compared three anomaly detection algorithms from the sklearn library:
 
-This project enabled me to deepen my understanding of anomaly detection methodologies, leverage statistical and machine learning knowledge, and effectively evaluate and interpret model performance through comprehensive visualizations and metrics.
+- **One-Class SVM (Semi-supervised):** Trained solely on normal data to learn a boundary distinguishing normal from anomalous samples.
+
+- **Local Outlier Factor (LOF) (Unsupervised/Semi-supervised):** Detects anomalies based on the local density deviation of data points. It can operate purely unsupervised or in novelty detection (semi-supervised) mode.
+
+- **Isolation Forest (Unsupervised):** Identifies anomalies by isolating samples in decision trees based on their rarity or deviation from the majority.
+
+Through the project, I strengthened my proficiency in statistical and machine learning methodologies, developed a clear understanding of supervised, semi-supervised, and unsupervised anomaly detection techniques, and enhanced my ability to evaluate and interpret model performance through comprehensive metrics and visualizations.
 
 ---
 
