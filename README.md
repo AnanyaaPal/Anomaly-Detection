@@ -86,9 +86,9 @@ This project explores three anomaly detection models—One-Class SVM, Isolation 
 
 | Model                   | Accuracy | Precision | Recall | F1-Score |
 |-------------------------|----------|-----------|--------|----------|
-| **One-Class SVM**       | 64.2%    | 88.2%     | 27.9%  | 42.4%    |
-| **Local Outlier Factor**| 53.4%    | 54.5%     | 1.8%   | 3.5%     |
-| **Isolation Forest**    | 97.9%    | 93.1%     | 100.0% | 96.4%    |
+| **One-Class SVM**       | **83.7%**  | **89.1%**   | **77.0%** | **82.6%** |
+| **Local Outlier Factor**| **99.1%**  | **98.2%**   | **100.0%**| **99.1%** |
+| **Isolation Forest**    | **91.6%**  | **85.8%**   | **100.0%**| **92.3%** |
 
 Best Performing Model: **Isolation Forest**
 
@@ -96,9 +96,9 @@ Best Performing Model: **Isolation Forest**
 ![Isolation Forest Precision-Recall Curve](assets/Isolation_Forest_Precision-Recall%20Curve.png)
 
 ### Final Thoughts
-- **Isolation Forest** clearly emerges as the most effective model for anomaly detection in this dataset, showcasing superior accuracy (97.9%) and an optimal balance between precision (93.1%) and recall (100%).
-- **One-Class SVM** remains valuable in scenarios where recall is prioritized over precision, such as fraud detection.
-- **Local Outlier Factor (LOF)** performs poorly on this dataset, indicating its limitations in generalizing well to the provided data structure.
+- **One-Class SVM** achieves moderate performance with a test accuracy of **83.7%**. However, its recall of **77.0%** suggests that a non-negligible number of anomalies are missed.
+- **Local Outlier Factor (LOF)** exhibits near-perfect performance (accuracy **99.1%**, 100% recall). While this may look ideal on paper, it is a red flag for overfitting—its sensitivity might make it unreliable when facing new, noisy real-world data.
+- **Isolation Forest** strikes the best balance between performance and robustness. With a test accuracy of **91.6%**, **100% recall**, and strong precision (**85.8%**), it offers a reliable and generalizable solution for anomaly detection.
 
 ---
 
