@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import pytest
 from models.iav_flap_anomaly_detection import make_data
 from sklearn.preprocessing import StandardScaler
