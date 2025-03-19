@@ -93,7 +93,8 @@ This project explores three anomaly detection models—One-Class SVM, Isolation 
 Best Performing Model: **Isolation Forest**
 
 ### Precision-Recall Curve (Isolation Forest)
-![Isolation Forest Precision-Recall Curve](assets/Isolation_Forest_Precision-Recall%20Curve.png)
+![Isolation Forest Precision-Recall Curve](https://github.com/AnanyaaPal/Anomaly-Detection/blob/main/assets/Isolation_Forest_Precision-Recall%20Curve.png)
+
 
 ### Final Thoughts
 - **One-Class SVM** achieves moderate performance with a test accuracy of **83.7%**. However, its recall of **77.0%** suggests that a non-negligible number of anomalies are missed.
