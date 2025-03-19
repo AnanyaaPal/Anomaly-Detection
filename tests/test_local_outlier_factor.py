@@ -22,6 +22,8 @@ def test_lof_evaluate(dataset, lof_model):
     X_train, X_test, y_test = dataset
     lof_model.fit(X_train)
     eval_results = lof_model.evaluate(X_test, y_test)
+    
     for metric in ["accuracy", "precision", "recall", "f1_score"]:
-        assert metric == lof_model.evaluate(X_test, y_test)[metric] is not None, f"{metric} calculation failed"
-        assert 0 <= lof_model.evaluate(X_test, y_test)[metric] <= 1, f"{metric} outside valid range"
+        value = eval_results.get(metric)
+        assert value is not None, f"{metric} calculation failed"
+        assert 0 <= value <= 1, f"{metric} outside valid range"
