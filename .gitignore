@@ -5,3 +5,5 @@
 **/__pycache__/
 *.pyc
 *.pyo
+echo "__pycache__/" >> .gitignore
+
