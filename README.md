@@ -12,7 +12,7 @@ This project involves developing, evaluating, and deploying various anomaly dete
 ---
 
 ## Description
-The motivation behind this project was to enhance my analytical skills by addressing a realistic anomaly detection task, specifically involving unlabeled or partially labeled datasets in which anomalies result in data shifting and flipping. To tackle this, I implemented and compared three anomaly detection algorithms:
+The motivation behind this project was to enhance my analytical skills by addressing a realistic anomaly detection task, specifically involving unlabeled or partially labeled datasets in which anomalies result in data shifting and flipping. To tackle this, I implemented and compared three anomaly detection algorithms from the sklearn library:
 
 - **One-Class SVM (Semi-supervised):** Trained solely on normal data to learn a boundary distinguishing normal from anomalous samples.
 
