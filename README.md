@@ -84,13 +84,13 @@ This project explores three anomaly detection models—One-Class SVM, Isolation 
 ## Results
 ### Model Performance Comparison
 
-| Model                 | Accuracy | Precision | Recall | F1-Score |
-|-----------------------|----------|-----------|--------|----------|
-| **One-Class SVM**     | 85.5%    | 50.3%     | 100.0% | 66.9%    |
-| **Local Outlier Factor** | 53.8%    | 76.8%     | 5.9%   | 11.0%    |
-| **Isolation Forest**  | 97.8%    | 89.0%     | 100.0% | 94.2%    |
+| Model                   | Accuracy | Precision | Recall | F1-Score |
+|-------------------------|----------|-----------|--------|----------|
+| **One-Class SVM**       | 64.2%    | 88.2%     | 27.9%  | 42.4%    |
+| **Local Outlier Factor**| 53.4%    | 54.5%     | 1.8%   | 3.5%     |
+| **Isolation Forest**    | 97.9%    | 93.1%     | 100.0% | 96.4%    |
 
-### Best Performing Model: **Isolation Forest**
+Best Performing Model: **Isolation Forest**
 
 ### Precision-Recall Curve (Isolation Forest)
 ![Isolation Forest Precision-Recall Curve](assets/Isolation_Forest_Precision-Recall%20Curve.png)
